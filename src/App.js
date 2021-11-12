@@ -13,49 +13,53 @@ import PlaceOrder from "./Pages/Products/PlaceOrder/PlaceOrder";
 import Login from "./Pages/Login/Login/Login";
 import Register from "./Pages/Login/Register/Register";
 import DashBoard from "./Pages/DashBoard/DashBoard/DashBoard";
+import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
+import AuthProvider from "./Pages/contexts/AuthProvider/AuthProvider";
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Navber></Navber>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-          <Route path="/products">
-            <Products></Products>
-          </Route>
-          <Route path="/exploreProducts/:watchId">
-            <ExploreProducts></ExploreProducts>
-          </Route>
-          <Route path="/placeOrder">
-            <PlaceOrder></PlaceOrder>
-          </Route>
-          <Route path="/about">
-            <About></About>
-          </Route>
-          <Route path="/contact">
-            <Contact></Contact>
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/register">
-            <Register />
-          </Route>
-          <Route path="/dashBoard">
-            <DashBoard></DashBoard>
-          </Route>
-          <Route path="*">
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Navber></Navber>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route path="/products">
+              <Products></Products>
+            </Route>
+            <PrivateRoute path="/exploreProducts/:watchId">
+              <ExploreProducts></ExploreProducts>
+            </PrivateRoute>
+            <Route path="/placeOrder">
+              <PlaceOrder></PlaceOrder>
+            </Route>
+            <Route path="/about">
+              <About></About>
+            </Route>
+            <Route path="/contact">
+              <Contact></Contact>
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/register">
+              <Register />
+            </Route>
+            <PrivateRoute path="/dashBoard">
+              <DashBoard></DashBoard>
+            </PrivateRoute>
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
+          </Switch>
+          <Footer></Footer>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }

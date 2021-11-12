@@ -8,15 +8,14 @@ const ExploreProducts = () => {
   const [exploreProducts, setExploreProducts] = useState({});
 
   useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/Mahi6086/FAKE-DATA/main/Watch/Watch.json"
-    )
+    fetch(`http://localhost:5000/services/${watchId}`)
       .then((res) => res.json())
-      .then((data) => {
-        const details = data.find((dp) => dp?.id == watchId);
-        setExploreProducts(details);
-      });
+      .then((data) => setExploreProducts(data));
   }, []);
+
+  /* {
+        const details = data.find((dp) => dp?.id == watchId);
+        setExploreProducts(details);} */
 
   return (
     <div style={{ backgroundColor: "#F6F4F1" }} className="tour-details">

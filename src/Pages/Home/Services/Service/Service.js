@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Service.css";
 const Service = (props) => {
-  const { id, img, name, description, price } = props.service;
+  const { _id, image, name, description, price } = props.service;
   return (
     <div>
       <div className="col">
@@ -11,7 +11,7 @@ const Service = (props) => {
           className="card h-100 service"
         >
           <img
-            src={img}
+            src={image}
             className="card-img-top rounded-3  mx-auto"
             alt="..."
           />
@@ -27,7 +27,7 @@ const Service = (props) => {
               </span>
             </div>
             <p className="card-text text-black-50 text-start">{description}</p>
-            <Link to={`/exploreProducts/${id}`}>
+            <Link to={`/exploreProducts/${_id}`}>
               <button
                 style={{ backgroundColor: "#9F7A49" }}
                 type="button"

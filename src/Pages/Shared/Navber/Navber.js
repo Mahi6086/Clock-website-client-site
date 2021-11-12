@@ -1,9 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
 import logo from "../../../images/dialz-logo_300x300.png";
+import useAuth from "../../hooks/useAuth";
 
 const Navber = () => {
+  const { user, logout } = useAuth();
   return (
     <div className="p-1 ">
       <div className="container">
@@ -47,71 +48,72 @@ const Navber = () => {
                 >
                   CONTACT
                 </NavLink>
-                {/* {user.email && ( */}
-                <NavLink
-                  to="/dashBoard"
-                  className="nav-link text-dark fw-bolder  me-2"
-                >
-                  <span className="">
-                    <i className="fas fa-user-shield me-1"></i>
-                  </span>
-                  DASHBOARD
-                </NavLink>
-                {/* )} */}
+                {user.email && (
+                  <NavLink
+                    to="/dashBoard"
+                    className="nav-link text-dark fw-bolder  me-2"
+                  >
+                    <span className="">
+                      <i className="fas fa-user-shield me-1"></i>
+                    </span>
+                    DASHBOARD
+                  </NavLink>
+                )}
 
-                {/*  {user.email ? (
+                {user.email ? (
+                  <div
+
+                  /*  style={{
+                      backgroundColor: "tomato",
+                      border: "none",
+                      borderRadius: "10px",
+                    }} */
+                  >
+                    <button
+                      onClick={logout}
+                      type="button"
+                      className="btn btn-info text-dark  ms-1 fw-bolder fs-5"
+                    >
+                      logOut
+                      <i className="fas fa-sign-in-alt ms-2 fw-bold"></i>
+                    </button>
+                  </div>
+                ) : (
+                  <NavLink to="/register">
                     <div
-                      className="pb-3"
+                    /*  className="pb-3 mt-1"
                       style={{
                         backgroundColor: "tomato",
                         border: "none",
                         borderRadius: "10px",
-                      }}
+                      }} */
                     >
                       <button
-                        onClick={handleLogout}
                         type="button"
-                        className="btn text-dark btn-lg h-25 ms-1 fw-bolder fs-4"
+                        className="btn btn-info text-dark   ms-1 fw-bolder fs-5 "
                       >
-                        logOut
-                        <i className="fas fa-sign-in-alt ms-2 fw-bold"></i>
+                        <i className="fas fa-user-plus text-dark me-2"></i>
+                        Register
                       </button>
                     </div>
-                  ) : (
-                    <Link to="/register">
-                      <div
-                        className="pb-3 mt-1"
-                        style={{
-                          backgroundColor: "tomato",
-                          border: "none",
-                          borderRadius: "10px",
-                        }}
-                      >
-                        <button
-                          type="button"
-                          className="btn text-dark btn-lg  ms-1 fw-bolder fs-4 mt-2  h-25"
-                        >
-                          <i className="fas fa-user-plus text-dark me-2"></i>Register
-                        </button>
-                      </div>
-                    </Link>
-                  )}
-                  <div
-                    style={{ marginTop: "17px" }}
-                    className="ms-2  d-flex justify-content-center align-items-center"
+                  </NavLink>
+                )}
+                <div
+                  // style={{ marginTop: "17px" }}
+                  className="ms-2  d-flex justify-content-center align-items-center"
+                >
+                  <img
+                    className="rounded rounded-circle w-25"
+                    src={user?.photoURL}
+                    alt=""
+                  />
+                  <a
+                    href="#login"
+                    className=" text-dark fw-bolder text-decoration-none ms-2"
                   >
-                    <img
-                      className="rounded rounded-circle w-25"
-                      src={user.photoURL}
-                      alt=""
-                    />
-                    <a
-                      href="#login"
-                      className=" text-dark fw-bolder text-decoration-none ms-2"
-                    >
-                      {user.displayName}
-                    </a>
-                  </div> */}
+                    {user?.displayName}
+                  </a>
+                </div>
               </div>
             </div>
           </div>

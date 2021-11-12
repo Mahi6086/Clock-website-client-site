@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
+import useAuth from "../../hooks/useAuth";
 import Product from "../Product/Product";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
+  const { user } = useAuth();
+  /* `http://localhost:5000/services?email=${user.email}` */
   useEffect(() => {
-    fetch("./services.json")
+    fetch(`http://localhost:5000/services?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -26,7 +29,7 @@ const Products = () => {
           ></div>
           <div className="row row-cols-1 row-cols-md-3 g-4 mt-5 pb-5">
             {products.map((product) => (
-              <Product key={product.id} product={product}></Product>
+              <Product key={product._id} product={product}></Product>
             ))}
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 
 const PlaceOrder = () => {
@@ -10,19 +11,17 @@ const PlaceOrder = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    /*  data.status = "Pending";
-        // data.status = user?.email;
-    
-        axios
-          .post("https://mysterious-spire-59402.herokuapp.com/addBooking", data)
-          .then((res) => {
-            if (res.data.insertedId) {
-              alert("added successfully");
-              reset();
-            }
-          });
-    
-        console.log(data); */
+    data.status = "Pending";
+    // data.status = user?.email;
+
+    axios.post("http://localhost:5000/addProducts", data).then((res) => {
+      if (res.data.insertedId) {
+        alert("added successfully");
+        reset();
+      }
+    });
+
+    console.log(data);
   };
 
   return (

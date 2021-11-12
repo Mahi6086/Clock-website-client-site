@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useAuth from "../../hooks/useAuth";
 import AddProduct from "../AddProduct/AddProduct";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import ManageAllOrders from "../ManageAllOrders/ManageAllOrders";
@@ -9,7 +10,7 @@ import Reviews from "../Reviews/Reviews";
 import "./DashBoardHome.css";
 
 const DashBoardHome = () => {
-  // const { user } = useAuth();
+  const { user } = useAuth();
   const [control, setControl] = useState("addEvent");
   return (
     <div className="admin-container">
@@ -17,7 +18,7 @@ const DashBoardHome = () => {
         <div className="admin-box">
           <div className="row admin-container ">
             <div className="col 12 col-md-2">
-              <div className="admin-area pt-5">
+              <div className="admin-area h-100 pt-5">
                 <h2
                   style={{
                     color: "#9F7A49",
@@ -77,13 +78,13 @@ const DashBoardHome = () => {
               </div>
             </div>
             <div className="col-12 col-md-10 text-center  text-center">
-              <h1 className="mt-5 mb-5  W-50" style={{ fontFamily: "DM Sans" }}>
+              <h1 className="mt-5 mb-3  W-50" style={{ fontFamily: "DM Sans" }}>
                 Welcome!!
                 <span
-                  style={{ color: "tomato" }}
+                  style={{ color: "#9F7A49" }}
                   className=" text-decoration-none P-3 rounded rounded-3 ms-2 me-2"
                 >
-                  {/* {user.displayName}. */}
+                  {user.displayName}.
                 </span>
                 Have a Nice Day.
               </h1>
