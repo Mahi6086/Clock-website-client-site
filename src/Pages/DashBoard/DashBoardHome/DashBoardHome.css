@@ -7,6 +7,7 @@
 .admin-container {
   overflow-x: hidden;
   background-color: #f6f4f1;
+  height: 100vh;
 }
 .admin-menu {
   list-style: none;

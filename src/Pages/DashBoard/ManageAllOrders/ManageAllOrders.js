@@ -83,9 +83,9 @@ const ManageAllOrders = () => {
                   <td className="p-3 fw-bolder">{pd.price}</td>
                   <td className="p-3 fw-bolder">
                     {}{" "}
-                    <button className="btn bg-info p-2 mt-2 fw-bolder">
+                    {/* <button className="btn bg-info p-2 mt-2 fw-bolder">
                       {pd.status}..
-                    </button>
+                    </button> */}
                     <p>
                       {pd.status === "Approved" ? (
                         <button className="btn bg-info p-2 mt-2 fw-bolder">

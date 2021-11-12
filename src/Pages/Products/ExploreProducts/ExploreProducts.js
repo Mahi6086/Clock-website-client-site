@@ -38,7 +38,7 @@ const ExploreProducts = () => {
           <div className="col col-sm-12 col-md-6">
             <img
               className="rounded-3 img-fluid mt-5"
-              src={exploreProducts?.img}
+              src={exploreProducts?.image}
               alt=""
             />
           </div>

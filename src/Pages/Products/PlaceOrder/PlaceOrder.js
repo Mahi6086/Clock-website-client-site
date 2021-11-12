@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import useAuth from "../../hooks/useAuth";
 
 const PlaceOrder = () => {
   const {
@@ -9,6 +10,7 @@ const PlaceOrder = () => {
     reset,
     formState: { errors },
   } = useForm();
+  const { user } = useAuth();
 
   const onSubmit = (data) => {
     data.status = "Pending";
@@ -41,7 +43,7 @@ const PlaceOrder = () => {
               <input
                 className="p-2 m-2 w-100 border-0 rounded rounded-3 p-3 text-black-50 fs-6"
                 type="text"
-                //   value={user?.displayName}
+                value={user?.displayName}
                 {...register("name")}
                 required
                 placeholder="Customer Name"
@@ -51,7 +53,7 @@ const PlaceOrder = () => {
                 //   defaultValue={data.status}
                 className="p-2 m-2 w-100 border-0 rounded rounded-3 p-3 text-black-50 fs-6"
                 type="email"
-                //   value={user?.email}
+                value={user?.email}
                 {...register("email")}
                 required
                 placeholder="Customer E-mail"
