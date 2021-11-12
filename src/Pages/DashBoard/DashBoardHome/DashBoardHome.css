@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+.admin-area {
+  background: rgb(58, 46, 136);
+  color: white;
+  height: 100vh;
+}
+.admin-container {
+  overflow-x: hidden;
+  background-color: #f6f4f1;
+}
+.admin-menu {
+  list-style: none;
+  cursor: pointer;
+}
+.admin-menu:hover {
+  color: #9f7a49;
+}

@@ -1,0 +1,14 @@
+.icon:hover {
+  color: white;
+  cursor: pointer;
+  /* font-size: 2rem;
+    transition: all 0.3s linear;
+    transform: scale(120%); */
+}
+.text {
+  color: white;
+}
+.logo:hover {
+  color: white;
+  cursor: pointer;
+}
