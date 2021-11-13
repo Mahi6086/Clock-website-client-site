@@ -3,16 +3,20 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
 
-const PlaceOrder = () => {
+const PlaceOrder = (props) => {
+  const { name, price, image, _id } = props.exploreProducts;
+
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
+
   const { user } = useAuth();
 
   const onSubmit = (data) => {
+    console.log(data);
     data.status = "Pending";
     // data.status = user?.email;
 
@@ -73,6 +77,7 @@ const PlaceOrder = () => {
                 type="text"
                 {...register("watch")}
                 required
+                value={name}
                 placeholder="Watch Name"
               />
               <br /> <br />
@@ -82,15 +87,17 @@ const PlaceOrder = () => {
                 //   value={user?.displayName}
                 {...register("price")}
                 required
+                value={price}
                 placeholder="Watch Price"
               />
               <br /> <br />
               <input
                 className="p-2 m-2 w-100 border-0 rounded rounded-3 p-3 text-black-50 fs-6"
-                type="link"
-                {...register("image", { required: true })}
+                type="date"
+                {...register("date", { required: true })}
                 required
-                placeholder="Please Type image URL"
+                defaultValue={new Date()}
+                placeholder="Order Date"
               />
               <br />
               <br />

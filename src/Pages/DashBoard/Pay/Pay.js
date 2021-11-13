@@ -3,7 +3,9 @@ import React from "react";
 const Pay = () => {
   return (
     <div>
-      <h1>Pay</h1>
+      <h1 style={{ marginTop: "100px", color: "Red", fontWeight: "bold" }}>
+        COMMING SOON...
+      </h1>
     </div>
   );
 };

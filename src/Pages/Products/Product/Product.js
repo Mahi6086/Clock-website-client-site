@@ -32,8 +32,8 @@ const Product = (props) => {
                 type="button"
                 className="btn text-dark text-center fw-bold w-100"
               >
-                <span className="fw-bolder fs-6 me-1 mt-2">
-                  <i class="fas fa-shopping-cart"></i>
+                <span className="fw-bolder  fs-6 me-1 mt-2">
+                  <i className="fas fa-shopping-cart"></i>
                 </span>
                 Order Now
               </button>

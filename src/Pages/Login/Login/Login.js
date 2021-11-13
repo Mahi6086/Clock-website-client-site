@@ -1,4 +1,125 @@
 import React, { useState } from "react";
+import { Container } from "react-bootstrap";
+import { Link, useLocation, useHistory } from "react-router-dom";
+
+import initializeFirebase from "../FireBase/firebase.init";
+import useAuth from "../../hooks/useAuth";
+
+initializeFirebase();
+
+const Login = () => {
+  const [loginData, setLoginData] = useState({});
+  const {
+    user,
+    setUser,
+    saveUser,
+    loginUser,
+    signInWithGoogle,
+    loading,
+    error,
+  } = useAuth();
+
+  const location = useLocation();
+  const history = useHistory();
+
+  const redirect_uri = location.state?.from || "/";
+
+  const handleOnChange = (e) => {
+    const field = e.target.name;
+    const value = e.target.value;
+    const newLoginData = { ...loginData };
+    newLoginData[field] = value;
+    setLoginData(newLoginData);
+  };
+  const handleLoginSubmit = (e) => {
+    loginUser(loginData.email, loginData.password, location, history);
+    e.preventDefault();
+  };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle().then((result) => {
+      const user = result.user;
+      saveUser(user.email, user.displayName, "PUT");
+      history.push(redirect_uri);
+    });
+  };
+
+  return (
+    <div className="font">
+      {/* <Header></Header> */}
+      <Container>
+        <form onSubmit={handleLoginSubmit}>
+          <label htmlFor="email">
+            <b>Email</b>
+          </label>
+          <input
+            onBlur={handleOnChange}
+            type="text"
+            placeholder="Enter Email"
+            name="email"
+            id="email"
+            required
+          />
+
+          <label htmlFor="psw">
+            <b>Password</b>
+          </label>
+          <input
+            onBlur={handleOnChange}
+            type="password"
+            placeholder="Enter Password"
+            name="password"
+            id="psw"
+            required
+          />
+          {loading && (
+            <div className="spinner-grow text-dark" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          )}
+          {user?.email && (
+            <div
+              className="alert alert-success fw-bolder w-25 mx-auto"
+              role="alert"
+            >
+              Alhumdulilah! Login Successfully!!
+            </div>
+          )}
+          {error && (
+            <div className="alert alert-danger fw-bolder w-25" role="alert">
+              {error}
+            </div>
+          )}
+
+          <button type="submit" className="registerbtn">
+            Login
+          </button>
+
+          <Link style={{ textDecoration: "none" }} to="/register">
+            New User? Please Register
+          </Link>
+        </form>
+        <h6 style={{ textAlign: "center", color: "blue", marginTop: "20px" }}>
+          OR SIGN IN USING GOOGLE
+        </h6>
+        <hr />
+        <div style={{ textAlign: "center", alignItems: "center" }}>
+          <button className="btn-primary font" onClick={handleGoogleSignIn}>
+            <i className="fab fa-google">
+              {" "}
+              <span className="font mx-3">Log in Using Google</span>
+            </i>
+          </button>
+        </div>
+      </Container>
+      {/* <Footer></Footer> */}
+    </div>
+  );
+};
+
+export default Login;
+
+/* import React, { useState } from "react";
 import { NavLink, useLocation, useHistory } from "react-router-dom";
 import Google from "../../../images/about/Group 573.png";
 import useAuth from "../../hooks/useAuth";
@@ -70,18 +191,18 @@ const Login = () => {
           </div>
         )}
         {user?.email && (
-          <div class="alert alert-success" role="alert">
+          <div className="alert alert-success fw-bolder w-25 mx-auto" role="alert">
             Alhumdulilah! Login Successfully!!
           </div>
         )}
         {authError && (
-          <div class="alert alert-danger" role="alert">
+          <div className="alert alert-danger" role="alert">
             {authError}
           </div>
         )}
       </form>
       <p>----------------Or----------------</p>
-      <div class="d-flex justify-content-center align-items-center">
+      <div className="d-flex justify-content-center align-items-center">
         <button
           onClick={handleGoogleSignIn}
           style={{ backgroundColor: "#9F7A49" }}
@@ -102,3 +223,4 @@ const Login = () => {
 };
 
 export default Login;
+ */

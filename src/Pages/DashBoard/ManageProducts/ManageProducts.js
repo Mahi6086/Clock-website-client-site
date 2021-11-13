@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 const ManageProducts = () => {
   const [booking, setBooking] = useState([]);
-  const [statuss, setStatuss] = useState(false);
+  // const [statuss, setStatuss] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:5000/manageProducts")
@@ -70,7 +70,7 @@ const ManageProducts = () => {
 
                   <td className="p-3 fw-bolder">{pd.name}</td>
                   <td className="p-3 fw-bolder">{pd.email}</td>
-                  <td className="p-3 fw-bolder">{pd.name}</td>
+                  <td className="p-3 fw-bolder">{pd.watch}</td>
                   <td className="p-3 fw-bolder">{pd.price}</td>
                   <td className="pt-3 fw-bolder">
                     <button

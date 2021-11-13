@@ -74,12 +74,12 @@ const MyOrders = () => {
 
                   <td className="p-3 fw-bolder">{pd.name}</td>
                   <td className="p-3 fw-bolder">{pd.email}</td>
-                  <td className="p-3 fw-bolder">{pd.name}</td>
+                  <td className="p-3 fw-bolder">{pd.watch}</td>
                   <td className="p-3 fw-bolder">{pd.price}</td>
                   <td className="p-3 fw-bolder">
                     {" "}
                     <button className="btn bg-info p-2 mt-2 fw-bolder">
-                      {pd.status}..
+                      {pd.status}
                     </button>
                   </td>
                   <td className="pt-3 fw-bolder">

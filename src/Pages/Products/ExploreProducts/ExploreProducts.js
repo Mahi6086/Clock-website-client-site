@@ -7,6 +7,8 @@ const ExploreProducts = () => {
   const { watchId } = useParams();
   const [exploreProducts, setExploreProducts] = useState({});
 
+  // const {name, price} = exploreProducts;
+
   useEffect(() => {
     fetch(`http://localhost:5000/services/${watchId}`)
       .then((res) => res.json())
@@ -141,7 +143,7 @@ const ExploreProducts = () => {
                   className="btn btn-lg w-100 fw-bolder fs-5"
                 >
                   <span className="fw-bolder fs-6 me-1 ">
-                    <i class="fas fa-shopping-cart"></i>
+                    <i className="fas fa-shopping-cart"></i>
                   </span>
                   Purchase Now
                 </button>
@@ -150,7 +152,10 @@ const ExploreProducts = () => {
           </div>
         </div>
       </div>
-      <PlaceOrder></PlaceOrder>
+      <PlaceOrder
+        key={exploreProducts?._id}
+        exploreProducts={exploreProducts}
+      ></PlaceOrder>
     </div>
   );
 };

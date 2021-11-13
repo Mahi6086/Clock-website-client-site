@@ -4,9 +4,9 @@ import logo from "../../../images/dialz-logo_300x300.png";
 import useAuth from "../../hooks/useAuth";
 
 const Navber = () => {
-  const { user, logout } = useAuth();
+  const { user, handleLogOut } = useAuth();
   return (
-    <div className="p-1 ">
+    <div className="">
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light">
           <div className="container-fluid">
@@ -27,7 +27,7 @@ const Navber = () => {
               <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div className="navbar-nav ms-auto fs-5 ">
+              <div className="navbar-nav ms-auto fs-6 ">
                 <NavLink
                   to="/products"
                   className="nav-link text-dark fw-bolder"
@@ -61,18 +61,11 @@ const Navber = () => {
                 )}
 
                 {user.email ? (
-                  <div
-
-                  /*  style={{
-                      backgroundColor: "tomato",
-                      border: "none",
-                      borderRadius: "10px",
-                    }} */
-                  >
+                  <div>
                     <button
-                      onClick={logout}
+                      onClick={handleLogOut}
                       type="button"
-                      className="btn btn-info text-dark  ms-1 fw-bolder fs-5"
+                      className="btn btn-info text-dark  ms-1 fw-bolder fs-6"
                     >
                       logOut
                       <i className="fas fa-sign-in-alt ms-2 fw-bold"></i>
@@ -80,17 +73,10 @@ const Navber = () => {
                   </div>
                 ) : (
                   <NavLink to="/register">
-                    <div
-                    /*  className="pb-3 mt-1"
-                      style={{
-                        backgroundColor: "tomato",
-                        border: "none",
-                        borderRadius: "10px",
-                      }} */
-                    >
+                    <div>
                       <button
                         type="button"
-                        className="btn btn-info text-dark   ms-1 fw-bolder fs-5 "
+                        className="btn btn-info text-dark   ms-1 fw-bolder fs-6 "
                       >
                         <i className="fas fa-user-plus text-dark me-2"></i>
                         Register
