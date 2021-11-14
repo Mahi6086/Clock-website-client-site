@@ -12,7 +12,7 @@ const Navber = () => {
           <div className="container-fluid">
             <NavLink to="/home" className="nav-link">
               <div className="">
-                <img src={logo} alt="" />
+                <img className="img-fluid w-75" src={logo} alt="" />
               </div>
             </NavLink>
             <button

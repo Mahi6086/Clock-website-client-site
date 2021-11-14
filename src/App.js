@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home/Home";
@@ -15,6 +14,8 @@ import Register from "./Pages/Login/Register/Register";
 import DashBoard from "./Pages/DashBoard/DashBoard/DashBoard";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import AuthProvider from "./Pages/contexts/AuthProvider/AuthProvider";
+import ManageAllOrders from "./Pages/DashBoard/ManageAllOrders/ManageAllOrders";
+import AdminRoute from "./Pages/Login/AdminRoute/AdminRoute";
 
 function App() {
   return (

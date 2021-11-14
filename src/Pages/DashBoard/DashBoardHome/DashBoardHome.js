@@ -12,7 +12,7 @@ import Reviews from "../Reviews/Reviews";
 import "./DashBoardHome.css";
 
 const DashBoardHome = () => {
-  const { user, handleLogOut } = useAuth();
+  const { user, handleLogOut, admin } = useAuth();
   const [control, setControl] = useState("addEvent");
 
   return (
@@ -22,31 +22,35 @@ const DashBoardHome = () => {
           <div className="row admin-container ">
             <div className="col 12 col-md-2">
               <div className="admin-area h-100 pt-5">
-                <h2
+                <h1
                   style={{
-                    color: "#9F7A49",
+                    /* color: "#9F7A49", */
                     fontFamily: "DM Sans",
                   }}
-                  className="text-center fw-bolder"
+                  className="text-center text-info fw-bolder"
                 >
                   DashBoard
-                </h2>
+                </h1>
 
                 <div className="all-menu mt-5 text-center">
-                  <div>
-                    <li
-                      onClick={() => setControl("manageProducts")}
-                      className="admin-menu p-2  fw-bolder fs-5"
-                    >
-                      <i className="fas fa-users me-1"></i> Manage Products
-                    </li>
-                    <li
-                      onClick={() => setControl("addProducts")}
-                      className="admin-menu p-2  fw-bolder fs-5"
-                    >
-                      <i className="fas fa-shopping-cart me-1"></i> Add Products
-                    </li>
-                  </div>
+                  {admin && (
+                    <div>
+                      <li
+                        onClick={() => setControl("manageProducts")}
+                        className="admin-menu p-2  fw-bolder fs-5"
+                      >
+                        <i className="fas fa-users me-1"></i> Manage Products
+                      </li>
+
+                      <li
+                        onClick={() => setControl("addProducts")}
+                        className="admin-menu p-2  fw-bolder fs-5"
+                      >
+                        <i className="fas fa-shopping-cart me-1"></i> Add
+                        Products
+                      </li>
+                    </div>
+                  )}
 
                   <li
                     onClick={() => setControl("myOrders")}
@@ -67,22 +71,23 @@ const DashBoardHome = () => {
                   >
                     <i className="fas fa-comment me-1"></i> Reviews
                   </li>
+                  {admin && (
+                    <div>
+                      <li
+                        onClick={() => setControl("makeAdmin")}
+                        className="admin-menu p-2  fw-bolder fs-5"
+                      >
+                        <i className="fas fa-user-shield me-1"></i> Make Admin
+                      </li>
 
-                  <div>
-                    <li
-                      onClick={() => setControl("makeAdmin")}
-                      className="admin-menu p-2  fw-bolder fs-5"
-                    >
-                      <i className="fas fa-user-shield me-1"></i> Make Admin
-                    </li>
-
-                    <li
-                      onClick={() => setControl("manageAllOrders")}
-                      className="admin-menu p-2  fw-bolder fs-5"
-                    >
-                      <i className="fas fa-users me-1"></i> Manage All Orders
-                    </li>
-                  </div>
+                      <li
+                        onClick={() => setControl("manageAllOrders")}
+                        className="admin-menu p-2  fw-bolder fs-5"
+                      >
+                        <i className="fas fa-users me-1"></i> Manage All Orders
+                      </li>
+                    </div>
+                  )}
                 </div>
                 <div style={{ marginTop: "80px" }}>
                   {user.email ? (
@@ -116,8 +121,8 @@ const DashBoardHome = () => {
               <h1 className="mt-5 mb-3  W-50" style={{ fontFamily: "DM Sans" }}>
                 Welcome!!
                 <span
-                  style={{ color: "#9F7A49" }}
-                  className=" text-decoration-none P-3 rounded rounded-3 ms-2 me-2"
+                  // style={{ color: "#9F7A49" }}
+                  className=" text-decoration-none P-3 rounded rounded-3 ms-2 me-2 text-info"
                 >
                   {user.displayName}.
                 </span>

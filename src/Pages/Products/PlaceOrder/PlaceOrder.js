@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
 
 const PlaceOrder = (props) => {
-  const { name, price, image, _id } = props.exploreProducts;
+  const { name, price } = props.exploreProducts;
 
   const {
     register,

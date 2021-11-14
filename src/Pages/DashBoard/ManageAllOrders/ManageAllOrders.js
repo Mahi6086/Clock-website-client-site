@@ -46,8 +46,8 @@ const ManageAllOrders = () => {
     >
       <div className="pt-5 pb-5">
         <h1
-          style={{ color: "#9F7A49", fontSize: "40px" }}
-          className="mt-1 mb-4 text-center fw-bolder"
+          style={{ /*  color: "#9F7A49", */ fontSize: "40px" }}
+          className="mt-1 mb-4 text-center fw-bolder text-info"
         >
           Manage All Orders
         </h1>

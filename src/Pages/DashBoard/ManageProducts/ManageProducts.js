@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 const ManageProducts = () => {
@@ -38,8 +38,8 @@ const ManageProducts = () => {
     >
       <div className="pt-5 pb-5">
         <h1
-          style={{ color: "#9F7A49", fontSize: "40px" }}
-          className="mt-1 mb-4 text-center fw-bolder"
+          style={{ /* color: "#9F7A49", */ fontSize: "40px" }}
+          className="mt-1 mb-4 text-center text-info fw-bolder"
         >
           Manage Products
         </h1>

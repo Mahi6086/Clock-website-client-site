@@ -27,7 +27,7 @@ const Register = () => {
       <form onSubmit={handleLoginSubmit}>
         <div className="container">
           <h1>Register</h1>
-          <p>Please fill in this form to create an account.</p>
+          <p className="">Please fill in this form to create an account.</p>
           <hr />
 
           <label htmlFor="text">
@@ -69,7 +69,7 @@ const Register = () => {
           <div>
             <p>
               By creating an account you agree to our{" "}
-              <Link style={{ textDecoration: "none" }} to="/">
+              <Link style={{ textDecoration: "none", color: "#04AA6D" }} to="/">
                 Terms & Privacy
               </Link>
               .
@@ -82,14 +82,17 @@ const Register = () => {
               )}
               {user?.email && (
                 <div
-                  className="alert alert-success fw-bolder w-25 mx-auto"
+                  className="alert alert-success fw-bolder w-100 mx-auto"
                   role="alert"
                 >
                   Alhumdulilah! Registration Successfully!!
                 </div>
               )}
               {error && (
-                <div className="alert alert-danger fw-bolder w-25" role="alert">
+                <div
+                  className="alert alert-danger fw-bolder w-100"
+                  role="alert"
+                >
                   {error}
                 </div>
               )}
@@ -100,7 +103,10 @@ const Register = () => {
           </div>
           <p>
             Already have an account?{" "}
-            <Link style={{ textDecoration: "none" }} to="/login">
+            <Link
+              style={{ textDecoration: "none", color: "#04AA6D" }}
+              to="/login"
+            >
               Login now
             </Link>
             .

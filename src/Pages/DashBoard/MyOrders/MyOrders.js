@@ -11,7 +11,7 @@ const MyOrders = () => {
     fetch("http://localhost:5000/myOrders")
       .then((res) => res.json())
       .then((data) => {
-        const myOrder = data.filter((dp) => dp.email == user.email);
+        const myOrder = data.filter((dp) => dp.email === user.email);
         setBooking(myOrder);
       });
   }, []);
@@ -43,8 +43,8 @@ const MyOrders = () => {
     >
       <div className="pt-5 pb-5">
         <h1
-          style={{ color: "#9F7A49", fontSize: "40px" }}
-          className="mt-1 mb-4 text-center fw-bolder"
+          style={{ /* color: "#9F7A49", */ fontSize: "40px" }}
+          className="mt-1 mb-4 text-center text-info fw-bolder"
         >
           My Orders{" "}
         </h1>{" "}

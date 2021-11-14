@@ -83,7 +83,7 @@ const Contact = () => {
             <div className="col-md-6">
               <input
                 type="text"
-                className="form-control p-3"
+                className="form-control p-3 bg-white border border-2"
                 placeholder="First name*"
                 aria-label="First name"
               />
@@ -91,7 +91,7 @@ const Contact = () => {
             <div className="col-md-6 ">
               <input
                 type="text"
-                className="form-control p-3"
+                className="form-control p-3 bg-white border border-2"
                 placeholder="Last name*"
                 aria-label="Last name"
               />
@@ -113,7 +113,7 @@ const Contact = () => {
               </label> */}
               <input
                 type="password"
-                className="form-control p-3"
+                className="form-control p-3 bg-white border border-2"
                 placeholder=" Your password*"
                 id="inputPassword4"
               />
@@ -124,7 +124,7 @@ const Contact = () => {
               </label> */}
               <input
                 type="text"
-                className="form-control p-3"
+                className="form-control p-3 bg-white border border-2"
                 id="inputAddress"
                 placeholder="Address"
               />

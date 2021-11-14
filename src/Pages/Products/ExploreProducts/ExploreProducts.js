@@ -13,7 +13,7 @@ const ExploreProducts = () => {
     fetch(`http://localhost:5000/services/${watchId}`)
       .then((res) => res.json())
       .then((data) => setExploreProducts(data));
-  }, []);
+  }, [watchId]);
 
   /* {
         const details = data.find((dp) => dp?.id == watchId);

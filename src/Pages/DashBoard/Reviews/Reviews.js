@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
 const Reviews = () => {
@@ -9,11 +10,18 @@ const Reviews = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    axios.post("http://localhost:5000/rating", data).then((res) => {
+      if (res.data.insertedId) {
+        alert("added successfully");
+        reset();
+      }
+    });
+
+    /* console.log(data);
     if (data.insertedId) {
       alert("added successfully");
       reset();
-    }
+    } */
   };
   return (
     <div
@@ -21,19 +29,25 @@ const Reviews = () => {
       className="shadow p-4 rounded rounded-4"
     >
       <h1
-        style={{ color: "#9F7A49", fontSize: "45px" }}
-        className="mt-1 mb-3 text-center fw-bolder"
+        style={{ /* color: "#9F7A49", */ fontSize: "45px" }}
+        className="mt-1 mb-3 text-center text-info fw-bolder"
       >
         Reviews
       </h1>
-      <hr className="container fw-bolder" />
 
       <div className="container mt-3">
-        {/* onSubmit={handleSubmit(onSubmit)} */}
         <form onSubmit={handleSubmit(onSubmit)}>
-          {/* register your input into the hook by invoking the "register" function */}
           <input
             className="p-2 m-2 w-100 border-0 rounded rounded-3 p-3 text-black-50 fs-6"
+            type="link"
+            {...register("image", { required: true })}
+            required
+            placeholder="Please Type image URL"
+          />
+          <br />
+          <br />
+          <input
+            className="p-2 m-2 w-100 border-0 rounded rounded-3 p-3 text-black-50 fs-6 bg-white"
             type="text"
             {...register("name")}
             required
@@ -41,7 +55,7 @@ const Reviews = () => {
           />
           <br /> <br />
           <input
-            className="p-2 m-2 w-100 border-0 rounded rounded-3 p-3 text-black-50 fs-6"
+            className="p-2 m-2 w-100 border-0 rounded rounded-3 p-3 text-black-50 fs-6 bg-white"
             type="text"
             {...register("title")}
             required
@@ -60,15 +74,6 @@ const Reviews = () => {
           <br />
           <input
             className="p-2 m-2 w-100 border-0 rounded rounded-3 p-3 text-black-50 fs-6"
-            type="link"
-            {...register("image", { required: true })}
-            required
-            placeholder="Please Type image URL"
-          />
-          <br />
-          <br />
-          <input
-            className="p-2 m-2 w-100 border-0 rounded rounded-3 p-3 text-black-50 fs-6"
             type="number"
             {...register("rating")}
             required
@@ -78,8 +83,8 @@ const Reviews = () => {
           {/* errors will return when field validation fails  */}
           {errors.exampleRequired && <span>This field is required</span>}
           <input
-            style={{ backgroundColor: "#9F7A49" }}
-            className="p-2 mb-5  btn  text-center w-100 fw-bolder fs-4"
+            /* style={{ backgroundColor: "#9F7A49" }} */
+            className="p-2 mb-5  btn bg-info  text-center w-100 fw-bolder fs-4"
             type="Submit"
           />
         </form>

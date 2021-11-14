@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import { Link, useLocation, useHistory } from "react-router-dom";
-
+import Google from "../../../images/about/Group 573.png";
 import initializeFirebase from "../FireBase/firebase.init";
 import useAuth from "../../hooks/useAuth";
 
@@ -49,9 +49,13 @@ const Login = () => {
       {/* <Header></Header> */}
       <Container>
         <form onSubmit={handleLoginSubmit}>
+          <h3 className="mb-3" style={{ color: "black" }}>
+            PLEASE LOGIN
+          </h3>
           <label htmlFor="email">
             <b>Email</b>
           </label>
+          <br />
           <input
             onBlur={handleOnChange}
             type="text"
@@ -60,10 +64,12 @@ const Login = () => {
             id="email"
             required
           />
+          <br />
 
           <label htmlFor="psw">
             <b>Password</b>
           </label>
+          <br />
           <input
             onBlur={handleOnChange}
             type="password"
@@ -79,36 +85,54 @@ const Login = () => {
           )}
           {user?.email && (
             <div
-              className="alert alert-success fw-bolder w-25 mx-auto"
+              className="alert alert-success fw-bolder w-100 mx-auto"
               role="alert"
             >
               Alhumdulilah! Login Successfully!!
             </div>
           )}
           {error && (
-            <div className="alert alert-danger fw-bolder w-25" role="alert">
+            <div className="alert alert-danger fw-bolder w-100" role="alert">
               {error}
             </div>
           )}
 
-          <button type="submit" className="registerbtn">
+          <button
+            style={{ backgroundColor: "#04aa6d" }}
+            type="button"
+            className="btn btn-lg w-100 fw-bolder mb-2 opacity-75"
+          >
             Login
           </button>
+          <br />
 
-          <Link style={{ textDecoration: "none" }} to="/register">
+          <Link
+            style={{ textDecoration: "none", color: "#04AA6D" }}
+            to="/register"
+          >
             New User? Please Register
           </Link>
         </form>
-        <h6 style={{ textAlign: "center", color: "blue", marginTop: "20px" }}>
+        <h6
+          style={{ textAlign: "center", color: "#04AA6D", marginTop: "20px" }}
+        >
           OR SIGN IN USING GOOGLE
         </h6>
         <hr />
-        <div style={{ textAlign: "center", alignItems: "center" }}>
-          <button className="btn-primary font" onClick={handleGoogleSignIn}>
-            <i className="fab fa-google">
-              {" "}
-              <span className="font mx-3">Log in Using Google</span>
-            </i>
+        <div className="d-flex justify-content-center align-items-center pb-5">
+          <button
+            onClick={handleGoogleSignIn}
+            style={{ backgroundColor: "#04aa6d" }}
+            type="button"
+            className="btn btn-lg w-100 fw-bolder opacity-75"
+          >
+            <img
+              src={Google}
+              className="img-fluid me-2 mb-1"
+              style={{ width: "30px" }}
+              alt="..."
+            />
+            Google Signin
           </button>
         </div>
       </Container>

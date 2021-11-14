@@ -69,7 +69,7 @@ const Banner = () => {
               </div>
               <div className="col-md-6"></div>
             </div>
-            <div>
+            <div className="">
               <img
                 style={{ backgroundBlendMode: "multiply" }}
                 src={b1}
