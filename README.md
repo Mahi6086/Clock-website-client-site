@@ -1,8 +1,32 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a DIALZ - THE WATCH STORE. To build a full-stack website using React, firebase, react router, node, express, mongodb etc.[Create React App](https://niche-products-website.web.app/).
 
-## Available Scripts
+### `ABOUT DIALZ - THE WATCH STORE`
+
+DIALZ, A CHAIN OF WATCH STORES BY TITAN COMPANY LIMITED, BRINGS TO YOU OVER 25 INTERNATIONAL WATCH BRANDS IN ONE DESTINATION.
+
+At the DIALZ Watch Store there's nothing more we'd like to do, than bring watches and watch-lovers together. Our stellar collection, is a fine showcase of masterpieces that exhibit craftsmanship, designs that represent timeless tradition, and embrace innovation. A parade featuring over 30 top international labels that inspires people to add to their existing collection. As India's leading retailer of international watch brands, DIALZ Watch Store takes a personal interest in those who wear and cherish quality timepieces, those who know it's the only way to tell time. And, if you're wondering what else sets us apart, it's our signature trio of perks one enjoys every time he/she walks in, and chooses a watch from our vast collection.
+
+DIALZ has over 57 stores in India across 27 cities offering more than 40 international watch brands in swiss, premium, high fashion and fashion segment.
+
+### `Used Firebase Authentication`
+
+This website, we used react authentication from firebase. Any Customer can easily taken services from this site, for this we added to contact part, Google signin part using react-authentication. Customer can easily buy her/his favourite watches from this site.
+
+### `Used Private Route`
+
+We used this site private route & react authentication from firebase. In this website has a DeshBoard. In DeshBoard Home has seven sections such as Add Products, Managing All Products, My Order, ManageProducts, Reviews, Pay, Make Admin & logout Button . We used private route this section. Normaly you can not enter this section. If you want to enter DashBoard Section , you need to Google login before enter this sections. Admin user only can see Add Products, Managing All Products, ManageProducts, Make Admin & logout Button & Normal User Only can see My Order, Reviews, Pay & logout Button.
+
+### `Features Of This Full-Stack Project`
+
+This Website name is Dialz. As through, this is a full-stack website it has two sites. 1.Client site 2. server site. Making Client site is used HTML5, CSS3, Bootstrap, React JS, React Router, Reack-HooK form & FireBase Authentication. Making Backend site is used node JS, express, mongodb etc. In this Website We used data from MongoDB. The Services part will update dynamically if you wanted to show a single service information, click on service button showing details.This is completely responsive. As it was styled with bootstrap. This site was deployed on FireBase. The link is provided in the top. The only bug of this site is that you can hire a single developer multiple times in a single project. That is unrealistic.
+
+### `Used Resouces`
+
+In the project, we used: The website ideas are collected from Themeforst website & taken image from unsplash, icon from flat-icon & font-awesome. Used Roboto font from google. This was my Second offical project on node, MongoDB & Express. I used private route. React-authentication & private route used from Firebase. I used Bootstrap to style the whole project. Some Pure CSS was used in this project!
+
+<!-- ## Available Scripts
 
 In the project directory, you can run:
 
@@ -68,3 +92,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ -->

@@ -20,12 +20,14 @@ const PlaceOrder = (props) => {
     data.status = "Pending";
     // data.status = user?.email;
 
-    axios.post("http://localhost:5000/addProducts", data).then((res) => {
-      if (res.data.insertedId) {
-        alert("added successfully");
-        reset();
-      }
-    });
+    axios
+      .post("https://calm-plains-59373.herokuapp.com/addProducts", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("added successfully");
+          reset();
+        }
+      });
 
     console.log(data);
   };

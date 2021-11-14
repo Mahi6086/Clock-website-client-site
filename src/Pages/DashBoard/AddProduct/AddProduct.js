@@ -13,12 +13,14 @@ const AddProduct = () => {
   const onSubmit = (data) => {
     console.log(data);
 
-    axios.post("http://localhost:5000/services", data).then((res) => {
-      if (res.data.insertedId) {
-        alert("added successfully");
-        reset();
-      }
-    });
+    axios
+      .post("https://calm-plains-59373.herokuapp.com/services", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("added successfully");
+          reset();
+        }
+      });
   };
 
   return (

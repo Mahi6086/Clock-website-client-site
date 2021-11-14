@@ -6,7 +6,7 @@ const ManageProducts = () => {
   // const [statuss, setStatuss] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/manageProducts")
+    fetch("https://calm-plains-59373.herokuapp.com/manageProducts")
       .then((res) => res.json())
       .then((data) => setBooking(data));
   }, []);
@@ -14,7 +14,7 @@ const ManageProducts = () => {
   const handleDelete = (id) => {
     const procced = window.confirm("Are you sure, you want to delete?");
     if (procced) {
-      const url = `http://localhost:5000/services/${id}`;
+      const url = `https://calm-plains-59373.herokuapp.com/services/${id}`;
 
       fetch(url, {
         method: "DELETE",

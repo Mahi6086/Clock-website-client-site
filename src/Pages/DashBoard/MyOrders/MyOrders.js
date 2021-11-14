@@ -8,7 +8,7 @@ const MyOrders = () => {
 
   const [booking, setBooking] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/myOrders")
+    fetch("https://calm-plains-59373.herokuapp.com/myOrders")
       .then((res) => res.json())
       .then((data) => {
         const myOrder = data.filter((dp) => dp.email === user.email);
@@ -19,7 +19,7 @@ const MyOrders = () => {
   const handleDelete = (id) => {
     const procced = window.confirm("Are you sure, you want to delete?");
     if (procced) {
-      const url = `http://localhost:5000/services/${id}`;
+      const url = `https://calm-plains-59373.herokuapp.com/services/${id}`;
 
       fetch(url, {
         method: "DELETE",

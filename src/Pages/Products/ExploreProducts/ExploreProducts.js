@@ -10,7 +10,7 @@ const ExploreProducts = () => {
   // const {name, price} = exploreProducts;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${watchId}`)
+    fetch(`https://calm-plains-59373.herokuapp.com/services/${watchId}`)
       .then((res) => res.json())
       .then((data) => setExploreProducts(data));
   }, [watchId]);

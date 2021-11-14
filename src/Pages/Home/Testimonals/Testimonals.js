@@ -9,7 +9,7 @@ const Testimonals = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/rating")
+    fetch("https://calm-plains-59373.herokuapp.com/rating")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

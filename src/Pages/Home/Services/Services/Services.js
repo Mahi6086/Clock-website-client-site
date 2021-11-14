@@ -5,9 +5,11 @@ import Service from "../Service/Service";
 const Services = () => {
   const [services, setServices] = useState([]);
   const { user } = useAuth();
-  /* `http://localhost:5000/services?email=${user.email}` */
+  /* `https://calm-plains-59373.herokuapp.com/services?email=${user.email}` */
   useEffect(() => {
-    fetch(`http://localhost:5000/services?email=${user.email}`)
+    fetch(
+      `https://calm-plains-59373.herokuapp.com/services?email=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

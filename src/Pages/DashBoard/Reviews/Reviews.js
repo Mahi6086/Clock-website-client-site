@@ -10,12 +10,14 @@ const Reviews = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    axios.post("http://localhost:5000/rating", data).then((res) => {
-      if (res.data.insertedId) {
-        alert("added successfully");
-        reset();
-      }
-    });
+    axios
+      .post("https://calm-plains-59373.herokuapp.com/rating", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("added successfully");
+          reset();
+        }
+      });
 
     /* console.log(data);
     if (data.insertedId) {
