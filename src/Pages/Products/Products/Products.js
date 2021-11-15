@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
-import useAuth from "../../hooks/useAuth";
+
 import Footer from "../../Shared/Footer/Footer";
 import Navber from "../../Shared/Navber/Navber";
 import Product from "../Product/Product";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-  const { user } = useAuth();
+
   /* `https://calm-plains-59373.herokuapp.com/services?email=${user.email}` */
   useEffect(() => {
-    fetch(
-      `https://calm-plains-59373.herokuapp.com/services?email=${user.email}`
-    )
+    fetch(`https://calm-plains-59373.herokuapp.com/services`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

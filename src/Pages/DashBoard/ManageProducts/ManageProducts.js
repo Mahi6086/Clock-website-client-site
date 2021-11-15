@@ -1,34 +1,29 @@
-// import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-import useAuth from "../../hooks/useAuth";
 const ManageProducts = () => {
   const [booking, setBooking] = useState([]);
-  // const [statuss, setStatuss] = useState(false);
-  const { user } = useAuth();
+
   useEffect(() => {
-    fetch(
-      `https://calm-plains-59373.herokuapp.com/services?email=${user.email}`
-    )
+    fetch(`https://calm-plains-59373.herokuapp.com/services`)
       .then((res) => res.json())
       .then((data) => setBooking(data));
   }, []);
-
-  const handleDelete = (id) => {
-    const procced = window.confirm("Are you sure, you want to delete?");
-    if (procced) {
-      const url = `https://calm-plains-59373.herokuapp.com/services/${id}`;
-
+  console.log(booking);
+  // const url = `https://calm-plains-59373.herokuapp.com/services/${id}`;
+  const cancelOrder = (id) => {
+    const proceed = window.confirm("Are you sure, you want to delete?");
+    if (proceed) {
+      const url = `https://calm-plains-59373.herokuapp.com/services${id}`;
       fetch(url, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          if (data.deletedCount == 0) {
-            alert("Successfully Deleted");
-            const remaining = booking.filter((book) => book._id !== id);
-            setBooking(remaining);
+          if (data.deletedCount) {
+            alert("Order cancel successfully");
+            const remain = booking.filter((order) => order._id !== id);
+            setBooking(remain);
           }
         });
     }
@@ -80,7 +75,7 @@ const ManageProducts = () => {
                         </p>
 
                         <button
-                          onClick={() => handleDelete(bk._id)}
+                          onClick={() => cancelOrder(bk._id)}
                           type="button"
                           className="btn text-dark bg-info text-center fw-bold w-100"
                         >

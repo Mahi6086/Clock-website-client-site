@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
-import useAuth from "../../../hooks/useAuth";
+
 import Service from "../Service/Service";
 
 const Services = () => {
   const [services, setServices] = useState([]);
-  const { user } = useAuth();
+
   /* `https://calm-plains-59373.herokuapp.com/services?email=${user.email}` */
   useEffect(() => {
-    fetch(
-      `https://calm-plains-59373.herokuapp.com/services?email=${user.email}`
-    )
+    fetch(`https://calm-plains-59373.herokuapp.com/services`)
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
