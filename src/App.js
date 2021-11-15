@@ -51,7 +51,7 @@ function App() {
             <Route path="/register">
               <Register />
             </Route>
-            <PrivateRoute path="/dashBoard">
+            <PrivateRoute path="/dashboard">
               <DashBoard></DashBoard>
             </PrivateRoute>
             <Route path="*">

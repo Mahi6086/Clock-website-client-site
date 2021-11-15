@@ -46,16 +46,11 @@ const Login = () => {
 
   return (
     <div className="font">
-      {/* <Header></Header> */}
       <Container>
         <form onSubmit={handleLoginSubmit}>
-          <h3 className="mb-3" style={{ color: "black" }}>
-            PLEASE LOGIN
-          </h3>
           <label htmlFor="email">
             <b>Email</b>
           </label>
-          <br />
           <input
             onBlur={handleOnChange}
             type="text"
@@ -64,12 +59,10 @@ const Login = () => {
             id="email"
             required
           />
-          <br />
 
           <label htmlFor="psw">
             <b>Password</b>
           </label>
-          <br />
           <input
             onBlur={handleOnChange}
             type="password"
@@ -78,68 +71,167 @@ const Login = () => {
             id="psw"
             required
           />
-          {loading && (
-            <div className="spinner-grow text-dark" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </div>
-          )}
-          {user?.email && (
-            <div
-              className="alert alert-success fw-bolder w-100 mx-auto"
-              role="alert"
-            >
-              Alhumdulilah! Login Successfully!!
-            </div>
-          )}
-          {error && (
-            <div className="alert alert-danger fw-bolder w-100" role="alert">
-              {error}
-            </div>
-          )}
+          {/* {loading && <CircularProgress />} */}
+          {/* {user?.email && <Alert severity="success">Login successfully!</Alert>}
+          {error && <Alert severity="error">{error}</Alert>} */}
 
-          <button
-            style={{ backgroundColor: "#04aa6d" }}
-            type="button"
-            className="btn btn-lg w-100 fw-bolder mb-2 opacity-75"
-          >
+          <button type="submit" className="registerbtn">
             Login
           </button>
-          <br />
 
-          <Link
-            style={{ textDecoration: "none", color: "#04AA6D" }}
-            to="/register"
-          >
+          <Link style={{ textDecoration: "none" }} to="/register">
             New User? Please Register
           </Link>
         </form>
-        <h6
-          style={{ textAlign: "center", color: "#04AA6D", marginTop: "20px" }}
-        >
+        <h6 style={{ textAlign: "center", color: "blue", marginTop: "20px" }}>
           OR SIGN IN USING GOOGLE
         </h6>
         <hr />
-        <div className="d-flex justify-content-center align-items-center pb-5">
-          <button
-            onClick={handleGoogleSignIn}
-            style={{ backgroundColor: "#04aa6d" }}
-            type="button"
-            className="btn btn-lg w-100 fw-bolder opacity-75"
-          >
-            <img
-              src={Google}
-              className="img-fluid me-2 mb-1"
-              style={{ width: "30px" }}
-              alt="..."
-            />
-            Google Signin
+        <div style={{ textAlign: "center", alignItems: "center" }}>
+          <button className="btn-primary font" onClick={handleGoogleSignIn}>
+            <i className="fab fa-google">
+              {" "}
+              <span className="font mx-3">Log in Using Google</span>
+            </i>
           </button>
         </div>
       </Container>
-      {/* <Footer></Footer> */}
     </div>
   );
 };
+
+//   const [loginData, setLoginData] = useState({});
+//   const {
+//     user,
+//     setUser,
+//     saveUser,
+//     loginUser,
+//     signInWithGoogle,
+//     loading,
+//     error,
+//   } = useAuth();
+
+//   const location = useLocation();
+//   const history = useHistory();
+
+//   const redirect_uri = location.state?.from || "/";
+
+//   const handleOnChange = (e) => {
+//     const field = e.target.name;
+//     const value = e.target.value;
+//     const newLoginData = { ...loginData };
+//     newLoginData[field] = value;
+//     setLoginData(newLoginData);
+//   };
+//   const handleLoginSubmit = (e) => {
+//     loginUser(loginData.email, loginData.password, location, history);
+//     e.preventDefault();
+//   };
+
+//   const handleGoogleSignIn = () => {
+//     signInWithGoogle().then((result) => {
+//       const user = result.user;
+//       saveUser(user.email, user.displayName, "PUT");
+//       history.push(redirect_uri);
+//     });
+//   };
+
+//   return (
+//     <div className="font">
+//       {/* <Header></Header> */}
+//       <Container>
+//         <form onSubmit={handleLoginSubmit}>
+//           <h3 className="mb-3" style={{ color: "black" }}>
+//             PLEASE LOGIN
+//           </h3>
+//           <label htmlFor="email">
+//             <b>Email</b>
+//           </label>
+//           <br />
+//           <input
+//             onBlur={handleOnChange}
+//             type="text"
+//             placeholder="Enter Email"
+//             name="email"
+//             id="email"
+//             required
+//           />
+//           <br />
+
+//           <label htmlFor="psw">
+//             <b>Password</b>
+//           </label>
+//           <br />
+//           <input
+//             onBlur={handleOnChange}
+//             type="password"
+//             placeholder="Enter Password"
+//             name="password"
+//             id="psw"
+//             required
+//           />
+//           {loading && (
+//             <div className="spinner-grow text-dark" role="status">
+//               <span className="visually-hidden">Loading...</span>
+//             </div>
+//           )}
+//           {user?.email && (
+//             <div
+//               className="alert alert-success fw-bolder w-100 mx-auto"
+//               role="alert"
+//             >
+//               Alhumdulilah! Login Successfully!!
+//             </div>
+//           )}
+//           {error && (
+//             <div className="alert alert-danger fw-bolder w-100" role="alert">
+//               {error}
+//             </div>
+//           )}
+
+//           <button
+//             style={{ backgroundColor: "#04aa6d" }}
+//             type="button"
+//             className="btn btn-lg w-100 fw-bolder mb-2 opacity-75"
+//           >
+//             Login
+//           </button>
+//           <br />
+
+//           <Link
+//             style={{ textDecoration: "none", color: "#04AA6D" }}
+//             to="/register"
+//           >
+//             New User? Please Register
+//           </Link>
+//         </form>
+//         <h6
+//           style={{ textAlign: "center", color: "#04AA6D", marginTop: "20px" }}
+//         >
+//           OR SIGN IN USING GOOGLE
+//         </h6>
+//         <hr />
+//         <div className="d-flex justify-content-center align-items-center pb-5">
+//           <button
+//             onClick={handleGoogleSignIn}
+//             style={{ backgroundColor: "#04aa6d" }}
+//             type="button"
+//             className="btn btn-lg w-100 fw-bolder opacity-75"
+//           >
+//             <img
+//               src={Google}
+//               className="img-fluid me-2 mb-1"
+//               style={{ width: "30px" }}
+//               alt="..."
+//             />
+//             Google Signin
+//           </button>
+//         </div>
+//       </Container>
+//       {/* <Footer></Footer> */}
+//     </div>
+//   );
+// };
 
 export default Login;
 
