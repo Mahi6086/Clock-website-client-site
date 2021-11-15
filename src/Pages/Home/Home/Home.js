@@ -1,4 +1,6 @@
 import React from "react";
+import Footer from "../../Shared/Footer/Footer";
+import Navber from "../../Shared/Navber/Navber";
 
 import Banner from "../Banner/Banner";
 import Collections from "../Collections/Collections";
@@ -8,10 +10,12 @@ import Testimonals from "../Testimonals/Testimonals";
 const Home = () => {
   return (
     <div>
+      <Navber></Navber>
       <Banner></Banner>
       <Collections></Collections>
       <Services></Services>
       <Testimonals></Testimonals>
+      <Footer></Footer>
     </div>
   );
 };

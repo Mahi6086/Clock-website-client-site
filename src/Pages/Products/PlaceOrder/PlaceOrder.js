@@ -47,7 +47,7 @@ const PlaceOrder = (props) => {
             <form onSubmit={handleSubmit(onSubmit)}>
               {/* register your input into the hook by invoking the "register" function */}
               <input
-                className="p-2 m-2 w-100 border-0 rounded rounded-3 p-3 text-black-50 fs-6"
+                className="p-2 m-2 w-100 border-0 rounded rounded-3 p-3 text-black-50 fs-6 bg-white"
                 type="text"
                 value={user?.displayName}
                 {...register("name")}
@@ -57,7 +57,7 @@ const PlaceOrder = (props) => {
               <br /> <br />
               <input
                 //   defaultValue={data.status}
-                className="p-2 m-2 w-100 border-0 rounded rounded-3 p-3 text-black-50 fs-6"
+                className="p-2 m-2 w-100 border-0 bg-white rounded rounded-3 p-3 text-black-50 fs-6"
                 type="email"
                 value={user?.email}
                 {...register("email")}
@@ -75,7 +75,7 @@ const PlaceOrder = (props) => {
                 <option value="rado">Rado</option>
               </select>
               <input
-                className="p-2 m-2 w-100 border-0 rounded rounded-3 p-3 text-black-50 fs-6"
+                className="p-2 m-2 w-100 border-0 rounded bg-white rounded-3 p-3 text-black-50 fs-6"
                 type="text"
                 {...register("watch")}
                 required

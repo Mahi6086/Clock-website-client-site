@@ -48,34 +48,42 @@ function DashBoardHome(props) {
   };
 
   const drawer = (
-    <div>
+    <div style={{ backgroundColor: "#31D2F2", color: "#fff", height: "100%" }}>
       <Toolbar />
       <Divider />
       <Link style={{ textDecoration: "none", padding: "6px" }} to="/">
-        <Button variant="text">HomePage</Button>
+        <Button sx={{ color: "#fff", fontWeight: "bold" }} variant="text">
+          HomePage
+        </Button>
       </Link>
       <br />
 
       {admin ? (
-        <Box>
+        <Box style={{ color: "white" }}>
           <Link
             style={{ textDecoration: "none", padding: "6px" }}
             to={`${url}/makeAdmin`}
           >
-            <Button variant="text">Make Admin</Button>
+            <Button sx={{ color: "#fff", fontWeight: "bold" }} variant="text">
+              Make Admin
+            </Button>
           </Link>
           <br />
           <Link
             style={{ textDecoration: "none", padding: "6px" }}
             to={`${url}/manageAllOrders`}
           >
-            <Button variant="text">All Orders</Button>
+            <Button sx={{ color: "#fff", fontWeight: "bold" }} variant="text">
+              Manage All Orders
+            </Button>
           </Link>
           <Link
             style={{ textDecoration: "none", padding: "6px" }}
             to={`${url}/addProducts`}
           >
-            <Button variant="text">Add Service</Button>
+            <Button sx={{ color: "#fff", fontWeight: "bold" }} variant="text">
+              Add Products
+            </Button>
           </Link>
           <br />
 
@@ -83,16 +91,31 @@ function DashBoardHome(props) {
             style={{ textDecoration: "none", padding: "6px" }}
             to={`${url}/manageProducts`}
           >
-            <Button variant="text">Manage All Products</Button>
+            <Button sx={{ color: "#fff", fontWeight: "bold" }} variant="text">
+              Manage Products
+            </Button>
           </Link>
         </Box>
       ) : (
         <Box>
           <Link
-            style={{ textDecoration: "none", padding: "6px" }}
+            style={{
+              textDecoration: "none",
+
+              padding: "6px",
+            }}
             to={`${url}`}
           >
-            <Button style={{ textDecoration: "none" }} variant="text">
+            <Button
+              style={{
+                textDecoration: "none",
+
+                color: "#fff",
+                textAlign: "center",
+                fontWeight: "bold",
+              }}
+              variant="text"
+            >
               DashBoard
             </Button>
           </Link>
@@ -101,7 +124,9 @@ function DashBoardHome(props) {
             style={{ textDecoration: "none", padding: "6px" }}
             to={`${url}/reviews`}
           >
-            <Button variant="text">Rate us</Button>
+            <Button sx={{ color: "#fff", fontWeight: "bold" }} variant="text">
+              Rate us
+            </Button>
           </Link>
           <br />
 
@@ -109,7 +134,9 @@ function DashBoardHome(props) {
             style={{ textDecoration: "none", padding: "6px" }}
             to={`${url}/pay`}
           >
-            <Button variant="text">Pay Now</Button>
+            <Button sx={{ color: "#fff", fontWeight: "bold" }} variant="text">
+              Pay Now
+            </Button>
           </Link>
 
           <br />
@@ -117,7 +144,9 @@ function DashBoardHome(props) {
             style={{ textDecoration: "none", padding: "6px" }}
             to={`${url}/myOrders`}
           >
-            <Button variant="text">My Orders</Button>
+            <Button sx={{ color: "#fff", fontWeight: "bold" }} variant="text">
+              My Orders
+            </Button>
           </Link>
           <br />
         </Box>
@@ -125,7 +154,11 @@ function DashBoardHome(props) {
 
       <Divider />
       <Button
-        style={{ marginLeft: "20px", marginTop: "20px" }}
+        style={{
+          marginLeft: "20px",
+          marginTop: "20px",
+          backgroundColor: "#31D2F2",
+        }}
         onClick={handleLogOut}
         variant="contained"
       >
@@ -147,7 +180,7 @@ function DashBoardHome(props) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar>
+        <Toolbar style={{ backgroundColor: "#31D2F2" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -157,7 +190,12 @@ function DashBoardHome(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
+          <Typography
+            sx={{ fontSize: "25px", textAlign: "center", fontWeight: "bold" }}
+            variant="h6"
+            noWrap
+            component="div"
+          >
             DashBoard
           </Typography>
         </Toolbar>
@@ -211,16 +249,17 @@ function DashBoardHome(props) {
         <Toolbar />
         <Switch>
           <Route exact path={path}>
-            <h3>
-              Hello,{" "}
-              <span style={{ color: "violet" }}> {user.displayName}</span>{" "}
-            </h3>
+            <h2 sx={{ fontSize: "30px" }}>
+              Welcome!!{" "}
+              <span style={{ color: "#31D2F2" }}> {user.displayName}</span> Have
+              a Nice Day.
+            </h2>
           </Route>
           <Route exact path={`${path}/`}></Route>
           <AdminRoute path={`${path}/makeAdmin`}>
             <MakeAdmin></MakeAdmin>
           </AdminRoute>
-          <AdminRoute path={`${path}/allOrders`}>
+          <AdminRoute path={`${path}/manageAllOrders`}>
             <ManageAllOrders></ManageAllOrders>
           </AdminRoute>
           <Route path={`${path}/reviews`}>

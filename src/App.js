@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       <AuthProvider>
         <Router>
-          <Navber></Navber>
+          {/* <Navber></Navber> */}
           <Switch>
             <Route exact path="/">
               <Home></Home>
@@ -58,7 +58,7 @@ function App() {
               <NotFound></NotFound>
             </Route>
           </Switch>
-          <Footer></Footer>
+          {/* <Footer></Footer> */}
         </Router>
       </AuthProvider>
     </div>

@@ -15,7 +15,7 @@ const Testimonals = () => {
   }, []);
 
   return (
-    <div>
+    <div className="pt-5 container">
       <h2 className="text-center">
         What Our
         <span className="border-3 border-bottom border-warning">
@@ -23,75 +23,49 @@ const Testimonals = () => {
         </span>
         out Us?
       </h2>
-      <div className="pb-5 h-100">
-        <div
-          id="carouselExampleControls"
-          className="carousel slide"
-          data-bs-ride="carousel"
-        >
+
+      <div className="row row-cols-1 row-cols-md-3  mt-5 pb-5">
+        {reviews.map((review) => (
           <div>
-            {reviews.map((review) => (
-              <div className="carousel-inner">
-                <div className="carousel-item active">
-                  <div className="px-5 pt-3 pb-5">
-                    <div className="px-5 my-5 shadow-lg w-100 bg-light rounded-20">
-                      <img
-                        width="200"
-                        className="mx-auto rounded-circle d-block"
-                        src={review.image}
-                        alt=""
+            <div className="col">
+              <div
+                //   style={{ border: "2px solid #9F7A49" }}
+                className="card h-100 shadow pt-3"
+              >
+                <img
+                  src={review.image}
+                  className="mx-auto rounded-circle d-block"
+                  width="200px"
+                  alt="..."
+                />
+                <div className="card-body ms-1">
+                  <div className="">
+                    <div className="pb-2 mt-3 text-center">
+                      <h4>{review.name}</h4>
+                      <small>
+                        <span className="text-second">{review.title}</span>{" "}
+                        <span className="px-2">at</span>{" "}
+                        <span className="text-warning">Programming Hero</span>
+                      </small>
+                      <p className="card-text text-black-50 text-start">
+                        {review.description}
+                      </p>
+                    </div>
+
+                    <div style={{ color: "#FFA41C" }} className="fw-bolder  ">
+                      <Rating
+                        initialRating={review.rating}
+                        emptySymbol="far fa-star"
+                        fullSymbol="fas fa-star"
+                        readonly
                       />
-                      <div className="pb-5 mt-3 text-center">
-                        <h4>{review.name}</h4>
-                        <small>
-                          <span className="text-second">{review.title} </span>
-                          <span className="px-2">at</span>
-                          <span className="text-warning">
-                            The Nielsen Company
-                          </span>
-                        </small>
-
-                        <p className="mx-auto col-sm-8">{review.description}</p>
-
-                        <Rating
-                          className="text-warning"
-                          initialRating={review.rating}
-                          emptySymbol="far fa-star"
-                          fullSymbol="fas fa-star"
-                          readonly
-                        />
-                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleControls"
-            data-bs-slide="prev"
-          >
-            <span
-              className="carousel-control-prev-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleControls"
-            data-bs-slide="next"
-          >
-            <span
-              className="carousel-control-next-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        </div>
+        ))}
       </div>
     </div>
   );

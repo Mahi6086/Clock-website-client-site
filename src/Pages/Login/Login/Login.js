@@ -47,6 +47,8 @@ const Login = () => {
   return (
     <div className="font">
       <Container>
+        <h1 className="">Login</h1>
+        <p className="mb-3">Please login to create an account.</p>
         <form onSubmit={handleLoginSubmit}>
           <label htmlFor="email">
             <b>Email</b>
@@ -71,28 +73,56 @@ const Login = () => {
             id="psw"
             required
           />
-          {/* {loading && <CircularProgress />} */}
-          {/* {user?.email && <Alert severity="success">Login successfully!</Alert>}
-          {error && <Alert severity="error">{error}</Alert>} */}
+          {loading && (
+            <div className="spinner-grow text-dark" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          )}
+          {user?.email && (
+            <div
+              className="alert alert-success fw-bolder w-100 mx-auto"
+              role="alert"
+            >
+              Alhumdulilah! Login Successfully!!
+            </div>
+          )}
+          {error && (
+            <div className="alert alert-danger fw-bolder w-100" role="alert">
+              {error}
+            </div>
+          )}
 
           <button type="submit" className="registerbtn">
             Login
           </button>
 
-          <Link style={{ textDecoration: "none" }} to="/register">
+          <Link
+            style={{ textDecoration: "none", color: "#04AA6D" }}
+            to="/register"
+          >
             New User? Please Register
           </Link>
         </form>
-        <h6 style={{ textAlign: "center", color: "blue", marginTop: "20px" }}>
+        <h6
+          style={{ textAlign: "center", color: "#04AA6D", marginTop: "20px" }}
+        >
           OR SIGN IN USING GOOGLE
         </h6>
         <hr />
-        <div style={{ textAlign: "center", alignItems: "center" }}>
-          <button className="btn-primary font" onClick={handleGoogleSignIn}>
-            <i className="fab fa-google">
-              {" "}
-              <span className="font mx-3">Log in Using Google</span>
-            </i>
+        <div className="d-flex justify-content-center align-items-center pb-5">
+          <button
+            onClick={handleGoogleSignIn}
+            style={{ backgroundColor: "#04aa6d" }}
+            type="button"
+            className="btn btn-lg text-light w-100  opacity-75"
+          >
+            <img
+              src={Google}
+              className="img-fluid me-2 mb-1"
+              style={{ width: "30px" }}
+              alt="..."
+            />
+            Google Signin
           </button>
         </div>
       </Container>
