@@ -2,13 +2,16 @@
 
 This is a DIALZ - THE WATCH STORE. To build a full-stack website using React, firebase, react router, node, express, mongodb etc.[Create React App](https://niche-products-website.web.app/).
 
-### `ABOUT DIALZ - THE WATCH STORE`
+### `Project Overview`
 
-DIALZ, A CHAIN OF WATCH STORES BY TITAN COMPANY LIMITED, BRINGS TO YOU OVER 25 INTERNATIONAL WATCH BRANDS IN ONE DESTINATION.
-
-At the DIALZ Watch Store there's nothing more we'd like to do, than bring watches and watch-lovers together. Our stellar collection, is a fine showcase of masterpieces that exhibit craftsmanship, designs that represent timeless tradition, and embrace innovation. A parade featuring over 30 top international labels that inspires people to add to their existing collection. As India's leading retailer of international watch brands, DIALZ Watch Store takes a personal interest in those who wear and cherish quality timepieces, those who know it's the only way to tell time. And, if you're wondering what else sets us apart, it's our signature trio of perks one enjoys every time he/she walks in, and chooses a watch from our vast collection.
-
-DIALZ has over 57 stores in India across 27 cities offering more than 40 international watch brands in swiss, premium, high fashion and fashion segment.
+<li>This is a website about online WATCH SHOP.</li>
+<li>You can buy your favorite watch through our website.</li>
+<li>You can place orders when you are logged in.</li>
+<li>As a customer you can visit our dashboard while logged in. You can also browse multiple routes such as the My Orders page and the review page.</li>
+<li>On the My Orders page, you can view your orders. You can also give your valuable feedback in the Review section.</li>
+<li>If you would like to explore more, please feel free to log in as a Admin. (email:admin@admin.com)(Pass:123456)</li>
+<li>Once logged in as an admin, you can add additional products, manage all orders, and you can also create a new admin.</li>
+<li>Good Luck. 😁</li>
 
 ### `Used Firebase Authentication`
 

@@ -13,7 +13,7 @@ const ManageProducts = () => {
   const cancelOrder = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `https://calm-plains-59373.herokuapp.com/services${id}`;
+      const url = `https://calm-plains-59373.herokuapp.com/services/${id}`;
       fetch(url, {
         method: "DELETE",
       })
