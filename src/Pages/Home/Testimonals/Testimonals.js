@@ -16,19 +16,21 @@ const Testimonals = () => {
 
   return (
     <div className="pt-5 container">
-      <h2 className="text-center">
+      <h2 data-aos="fade-up" data-aos-duration="1500" className="text-center">
         What Our
-        <span className="border-3 border-bottom border-warning">
+        <span className="ms-2" style={{ borderBottom: "3px solid #9F7A49" }}>
           Clients Say Ab
         </span>
         out Us?
       </h2>
 
-      <div className="row row-cols-1 row-cols-md-3  mt-5 pb-5">
+      <div className="row row-cols-1 row-cols-md-3 gy-4 mt-5 pb-5">
         {reviews.map((review) => (
           <div>
             <div className="col">
               <div
+                data-aos="zoom-out"
+                data-aos-duration="1500"
                 //   style={{ border: "2px solid #9F7A49" }}
                 className="card h-100 shadow pt-3"
               >

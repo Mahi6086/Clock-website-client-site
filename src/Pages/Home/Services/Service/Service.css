@@ -2,7 +2,17 @@
   border: 2px solid #9f7a49;
   cursor: pointer;
   box-shadow: 5px 8px 8px 8px #e7e5e5;
-  transition: all 0.5s linear;
+  /* transition: all 0.5s linear;
 
-  transform: scale(103%);
+  transform: scale(103%); */
+}
+figure .watch-img {
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+figure:hover .watch-img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }

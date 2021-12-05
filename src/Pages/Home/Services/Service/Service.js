@@ -7,15 +7,20 @@ const Service = (props) => {
     <div>
       <div className="col">
         <div
+          data-aos="zoom-in"
+          data-aos-duration="1500"
           //   style={{ border: "2px solid #9F7A49" }}
-          className="card h-100 service"
+          className="card h-100 service "
         >
-          <img
-            src={image}
-            className="card-img-top rounded-3  mx-auto"
-            alt="..."
-          />
-          <div className="card-body ms-1">
+          <figure>
+            <img
+              src={image}
+              className="card-img-top watch-img rounded-3  mx-auto"
+              alt="..."
+            />
+          </figure>
+
+          <div className="card-body ms-1 watch-img">
             <div className="d-flex justify-content-between align-items-center">
               <h4 className="card-title fw-bolder ">{name}</h4>
               <span

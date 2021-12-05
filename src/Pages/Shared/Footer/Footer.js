@@ -16,7 +16,11 @@ const Footer = () => {
     >
       <div className="container">
         <div className="row d-flex justify-content-center align-items-center text-white-50">
-          <div className="col-md-3 text-start">
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1500"
+            className="col-md-3 text-start"
+          >
             <h4 className="text mt-4 mb-3">Connect With Us</h4>
 
             <ul
@@ -57,7 +61,11 @@ const Footer = () => {
               </span>
             </div>
           </div>
-          <div className="col-md-3 text-start">
+          <div
+            data-aos="fade-left"
+            data-aos-duration="1500"
+            className="col-md-3 text-start"
+          >
             <h4 className="text mb-3">Information</h4>
             <ul style={{ listStyle: "none", marginLeft: "-30px" }}>
               <li className="logo">Search</li>
@@ -67,7 +75,11 @@ const Footer = () => {
               <li className="logo">Privacy Policy</li>
             </ul>
           </div>
-          <div className="col-md-3 text-start ">
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1500"
+            className="col-md-3 text-start "
+          >
             <h4 className="text mb-3">Support</h4>
             <ul style={{ listStyle: "none", marginLeft: "-30px" }}>
               <li className="logo">About Us</li>
@@ -77,7 +89,11 @@ const Footer = () => {
               <li className="logo">Terms of Use</li>
             </ul>
           </div>
-          <div className="col-md-3">
+          <div
+            data-aos="fade-left"
+            data-aos-duration="1500"
+            className="col-md-3"
+          >
             <img
               className="img-fluid w-100  ms-lg-3 rounded-3 img"
               src={pay}
@@ -87,7 +103,11 @@ const Footer = () => {
           </div>
           <div>
             <hr className="" />
-            <p className="text-center">
+            <p
+              data-aos="zoom-in"
+              data-aos-duration="1500"
+              className="text-center"
+            >
               All rights reserved Copyright © 2021 Dialz by{" "}
               <span className="text">Mahi Hasan</span>
             </p>

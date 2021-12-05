@@ -3,6 +3,8 @@ import b1 from "../../../images/about/w2.jpg"; /* banner1.jpg */
 import b2 from "../../../images/about/w1.jpg"; /* banner2 (2) (1).jpg */
 import b3 from "../../../images/about/w3.jpg"; /* banner3 (1) (1) (1).jpg */
 import { NavLink } from "react-router-dom";
+import "./Banner.css";
+
 const Banner = () => {
   return (
     <div className="">
@@ -36,7 +38,11 @@ const Banner = () => {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <div className="carousel-caption row">
-              <div className="col-md-6" style={{ marginBottom: "100px" }}>
+              <div
+                data-aos="fade-right"
+                data-aos-duration="1500"
+                className="col-md-6 watch-title"
+              >
                 <h6 style={{ color: "#CBBA93" }}>EMPIRE COLLECTION</h6>
                 <h1
                   style={{
@@ -55,6 +61,8 @@ const Banner = () => {
 
                 <NavLink to="/products">
                   <button
+                    data-aos="zoom-in"
+                    data-aos-duration="1500"
                     style={{
                       color: "#CBBA9C",
                       backgroundColor: "black",
@@ -86,7 +94,11 @@ const Banner = () => {
               alt="..."
             />
             <div className="carousel-caption row">
-              <div className="col-md-6" style={{ marginBottom: "100px" }}>
+              <div
+                data-aos="fade-right"
+                data-aos-duration="1500"
+                className="col-md-6 watch-title"
+              >
                 <h6 className="text-black">BUILT FOR MEN</h6>
                 <h1
                   style={{
@@ -106,6 +118,8 @@ const Banner = () => {
 
                 <NavLink to="/products">
                   <button
+                    data-aos="zoom-in"
+                    data-aos-duration="1500"
                     style={{
                       color: "black",
                       backgroundColor: "#9C7C65",
@@ -133,7 +147,11 @@ const Banner = () => {
             />
             <div className="carousel-caption row">
               <div className="col-md-6"></div>
-              <div className="col-md-6" style={{ marginBottom: "100px" }}>
+              <div
+                data-aos="fade-right"
+                data-aos-duration="1500"
+                className="col-md-6 watch-title"
+              >
                 <h6 className="text-black">NEW ARRAIVAL</h6>
                 <h1
                   style={{
@@ -153,6 +171,8 @@ const Banner = () => {
 
                 <NavLink to="/products">
                   <button
+                    data-aos="zoom-in"
+                    data-aos-duration="1500"
                     style={{
                       color: "black",
                       backgroundColor: "#ECECEC",

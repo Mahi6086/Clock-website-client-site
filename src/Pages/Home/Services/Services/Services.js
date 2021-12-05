@@ -15,7 +15,11 @@ const Services = () => {
     <div className="" style={{ backgroundColor: "#F6F4F1" }}>
       <div className="container-md  ">
         <div>
-          <h1 className="text-light fw-bolder text-black pt-5 mb-0">
+          <h1
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            className="text-light fw-bolder text-black pt-5 mb-0"
+          >
             <span style={{ color: "#9F7A49" }}>FEATURED</span> PRODUCTS
           </h1>
           <div
