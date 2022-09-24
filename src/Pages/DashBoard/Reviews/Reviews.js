@@ -11,7 +11,7 @@ const Reviews = () => {
 
   const onSubmit = (data) => {
     axios
-      .post("https://calm-plains-59373.herokuapp.com/rating", data)
+      .post(`${process.env.REACT_APP_SERVER_API}/rating`, data)
       .then((res) => {
         if (res.data.insertedId) {
           alert("added successfully");

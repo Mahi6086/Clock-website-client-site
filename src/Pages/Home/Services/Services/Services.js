@@ -5,9 +5,9 @@ import Service from "../Service/Service";
 const Services = () => {
   const [services, setServices] = useState([]);
 
-  /* `https://calm-plains-59373.herokuapp.com/services?email=${user.email}` */
+  /* `${process.env.REACT_APP_SERVER_API}/services?email=${user.email}` */
   useEffect(() => {
-    fetch(`https://calm-plains-59373.herokuapp.com/services`)
+    fetch(`${process.env.REACT_APP_SERVER_API}/services`)
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

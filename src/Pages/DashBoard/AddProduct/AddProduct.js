@@ -14,7 +14,7 @@ const AddProduct = () => {
     console.log(data);
 
     axios
-      .post("https://calm-plains-59373.herokuapp.com/services", data)
+      .post(`${process.env.REACT_APP_SERVER_API}/services`, data)
       .then((res) => {
         if (res.data.insertedId) {
           alert("added successfully");

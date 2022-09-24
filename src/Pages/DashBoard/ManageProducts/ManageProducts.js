@@ -4,16 +4,16 @@ const ManageProducts = () => {
   const [booking, setBooking] = useState([]);
 
   useEffect(() => {
-    fetch(`https://calm-plains-59373.herokuapp.com/services`)
+    fetch(`${process.env.REACT_APP_SERVER_API}/services`)
       .then((res) => res.json())
       .then((data) => setBooking(data));
   }, []);
   console.log(booking);
-  // const url = `https://calm-plains-59373.herokuapp.com/services/${id}`;
+  // const url = `${process.env.REACT_APP_SERVER_API}/services/${id}`;
   const cancelOrder = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `https://calm-plains-59373.herokuapp.com/services/${id}`;
+      const url = `${process.env.REACT_APP_SERVER_API}/services/${id}`;
       fetch(url, {
         method: "DELETE",
       })

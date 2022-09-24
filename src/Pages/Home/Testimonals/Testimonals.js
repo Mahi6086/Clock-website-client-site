@@ -9,7 +9,7 @@ const Testimonals = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("https://calm-plains-59373.herokuapp.com/rating")
+    fetch(`${process.env.REACT_APP_SERVER_API}/rating`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
@@ -82,9 +82,9 @@ export default Testimonals;
           <Review
           key={review.name}
           review={review}
-          
+
           ></Review>
-         
+
         ))}
       </div> */
 }

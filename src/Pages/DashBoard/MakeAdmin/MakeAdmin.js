@@ -9,7 +9,7 @@ const MakeAdmin = () => {
   };
   const handleAdminSubmit = (e) => {
     const user = { email };
-    fetch("https://calm-plains-59373.herokuapp.com/users/admin", {
+    fetch(`${process.env.REACT_APP_SERVER_API}/users/admin`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(user),
@@ -77,7 +77,7 @@ const MakeAdmin = () => {
   const handleAdminSubmit = (e) => {
     const user = { email };
     console.log(user);
-    fetch("https://calm-plains-59373.herokuapp.com/users/admin", {
+    fetch("${process.env.REACT_APP_SERVER_API}/users/admin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -98,7 +98,7 @@ const MakeAdmin = () => {
 
   return (
     <div className="" style={{ marginBottom: "210px", marginTop: "100px" }}>
-     
+
       <form onSubmit={handleAdminSubmit}>
         <h2 className="fw-bolder mb-5" style={{ color: "#9F7A49" }}>
           MAKE AN ADMIN

@@ -21,7 +21,7 @@ const PlaceOrder = (props) => {
     // data.status = user?.email;
 
     axios
-      .post("https://calm-plains-59373.herokuapp.com/addProducts", data)
+      .post(`${process.env.REACT_APP_SERVER_API}/addProducts`, data)
       .then((res) => {
         if (res.data.insertedId) {
           alert("added successfully");

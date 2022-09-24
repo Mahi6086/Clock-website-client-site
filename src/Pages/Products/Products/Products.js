@@ -7,9 +7,9 @@ import Product from "../Product/Product";
 const Products = () => {
   const [products, setProducts] = useState([]);
 
-  /* `https://calm-plains-59373.herokuapp.com/services?email=${user.email}` */
+  /* `${process.env.REACT_APP_SERVER_API}/services?email=${user.email}` */
   useEffect(() => {
-    fetch(`https://calm-plains-59373.herokuapp.com/services`)
+    fetch(`${process.env.REACT_APP_SERVER_API}/services`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

@@ -92,13 +92,13 @@ const useFirebase = () => {
   };
 
   useEffect(() => {
-    fetch(`https://calm-plains-59373.herokuapp.com/users/${user.email}`)
+    fetch(`${process.env.REACT_APP_SERVER_API}/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]);
 
   /* useEffect(() => {
-    fetch(`https://calm-plains-59373.herokuapp.com/users/${user.email}`)
+    fetch(`${process.env.REACT_APP_SERVER_API}/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]); */
@@ -118,7 +118,7 @@ const useFirebase = () => {
 
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("https://calm-plains-59373.herokuapp.com/users", {
+    fetch(`${process.env.REACT_APP_SERVER_API}/users`, {
       method: method,
       headers: {
         "content-type": "application/json",
@@ -247,7 +247,7 @@ const useFirebase = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`https://calm-plains-59373.herokuapp.com/users/${user.email}`)
+    fetch(`${process.env.REACT_APP_SERVER_API}/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]);
@@ -267,7 +267,7 @@ const useFirebase = () => {
 
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("https://calm-plains-59373.herokuapp.com/users", {
+    fetch("${process.env.REACT_APP_SERVER_API}/users", {
       method: method,
       headers: {
         "content-type": "application/json",

@@ -12,7 +12,7 @@ const ExploreProducts = () => {
   // const {name, price} = exploreProducts;
 
   useEffect(() => {
-    fetch(`https://calm-plains-59373.herokuapp.com/services/${watchId}`)
+    fetch(`${process.env.REACT_APP_SERVER_API}/services/${watchId}`)
       .then((res) => res.json())
       .then((data) => setExploreProducts(data));
   }, [watchId]);
